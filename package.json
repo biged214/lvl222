@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "main": "server.mjs",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
     "start": "node server.mjs",
-    "test": "node --test tests/server.test.mjs"
+    "build": "node --check server.mjs",
+    "sync:releases": "node scripts/sync-releases.mjs",
+    "test": "node --test tests/*.test.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0"

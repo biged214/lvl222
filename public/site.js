@@ -30,7 +30,7 @@ fetch('/api/release').then(r => { if (!r.ok) throw new Error(); return r.json();
   if (data.version) document.querySelector('#release-version').textContent = `Latest release: ${data.version}`;
   document.querySelectorAll('[data-download]').forEach(link => {
     const url = data.downloads?.[link.dataset.download];
-    if (typeof url === 'string' && url.startsWith('https://github.com/biged214/sccompanion/releases/download/')) {
+    if (typeof url === 'string' && url.startsWith('https://lvl222.com/downloads/sc-companion/')) {
       link.href = url;
       if (link.dataset.download === 'windows') link.textContent = 'Download for Windows ↓';
     }
