@@ -53,3 +53,9 @@ Legal copy is a draft based on the current app behavior and repository license. 
 Edit `public/index.html` for page copy and `public/styles.css` for styling. Real app screenshots are in `public/images`. To refresh them, start the SC Companion web preview at port 1421 and run `node scripts/capture-app.mjs` with Chrome installed. Only use an isolated browser profile with no private session data.
 
 This repository is independent of the desktop app. A website deployment does not publish an app update.
+
+## Search discoverability
+
+The homepage and all six information/download pages have server-rendered descriptions, canonical URLs, and Open Graph/Twitter previews. The homepage includes SoftwareApplication microdata identifying the free Windows/Linux app and its publisher. No ratings or reviews are invented. Canonicals prefer https://lvl222.com without redirecting installer URLs. Machine endpoints and installer files use noindex; the download page remains indexable.
+
+Keep public/sitemap.xml and seo.mjs current when adding pages. Run npm test to check metadata coverage. In Google Search Console, verify ownership of lvl222.com and submit https://lvl222.com/sitemap.xml, then request indexing of the homepage. This is an account-owner step; deployment alone does not submit the site or guarantee indexing, rankings, or rich results. No analytics or tracking were added.

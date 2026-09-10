@@ -14,6 +14,9 @@
     { "source": "/updates/sc-companion/latest.json", "destination": "/api/page?kind=updater" }
   ],
   "headers": [
+    { "source": "/downloads/sc-companion/:path*", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
+    { "source": "/updates/:path*", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
+    { "source": "/health", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
     { "source": "/(.*)", "headers": [
       { "key": "X-Content-Type-Options", "value": "nosniff" },
       { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },

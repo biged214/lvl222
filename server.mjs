@@ -33,6 +33,7 @@ export function createWebsite(releases = store) {
     let path;
     try { path = decodeURIComponent(new URL(req.url, 'http://localhost').pathname); } catch { send(400, 'Invalid path'); return; }
     try {
+      if (path.startsWith('/api/') || path.startsWith('/updates/') || path.startsWith('/downloads/sc-companion/') || path === '/health') res.setHeader('X-Robots-Tag', 'noindex');
       if (path === '/health') { send(200, 'ok'); return; }
       if (legalPages[path]) { send(200, legalPages[path], 'text/html; charset=utf-8'); return; }
       if (path === '/downloads') { send(200, downloadsPage(releases.list()), 'text/html; charset=utf-8'); return; }

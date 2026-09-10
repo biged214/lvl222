@@ -13,6 +13,7 @@ export default async function handler(req, res) {
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       return res.end(req.method === 'HEAD' ? undefined : (kind === 'downloads' ? downloadsPage(catalog.releases) : sourcePage(catalog.releases)));
     }
+    res.setHeader('X-Robots-Tag', 'noindex');
     res.setHeader('Content-Type', 'application/json');
     if (kind === 'updater') {
       if (!latest) { res.statusCode = 503; return res.end(); }
