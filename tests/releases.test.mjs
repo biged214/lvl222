@@ -39,7 +39,9 @@ test('mirror verifies bytes, serves ranges without redirects, and keeps last rel
     assert.equal((await fetch(url, { method: 'HEAD' })).headers.get('content-length'), String(bytes.length));
     assert.equal((await fetch(url, { headers: { 'If-None-Match': response.headers.get('etag') } })).status, 304);
     assert.equal((await fetch(base + '/downloads/sc-companion/v1.2.3/%2e%2e%2fcatalog.json')).status, 404);
-    assert.doesNotMatch(await (await fetch(base + '/downloads')).text(), /<script>/);
+    const downloadsHtml = await (await fetch(base + '/downloads')).text();
+    assert.match(downloadsHtml, /&lt;script&gt;alert\(1\)&lt;\/script&gt;/); // User content is escaped
+    assert.match(downloadsHtml, /<script>window\.va=/); // Analytics script is present
     offline = true;
     await assert.rejects(store.sync(), /offline/);
     assert.equal(store.latest().tag, tag);
