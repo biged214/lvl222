@@ -28,7 +28,7 @@ export function createWebsite(releases = store) {
     };
     res.setHeader('X-Content-Type-Options', 'nosniff');
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-    res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'");
+    res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; connect-src 'self' https://va.vercel-scripts.com; frame-ancestors 'none'; base-uri 'self'");
     if (!['GET', 'HEAD'].includes(req.method)) { res.setHeader('Allow', 'GET, HEAD'); send(405, 'Method not allowed'); return; }
     let path;
     try { path = decodeURIComponent(new URL(req.url, 'http://localhost').pathname); } catch { send(400, 'Invalid path'); return; }
