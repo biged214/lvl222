@@ -2,6 +2,20 @@
 
 Public company and SC Companion product site for https://lvl222.com.
 
+## Current hosting: Vercel
+
+The existing Vercel project is `lvl222/lvl222`, connected locally through ignored `.vercel/project.json`. `vercel.json` overrides the previous Node preset with a static site plus small API functions. `npm run build:vercel` creates `dist`. Never deploy `.env.local`, signing credentials, or the local `data` mirror.
+
+Public installer bytes are held in the connected `sc-companion-downloads` Blob store. The `/downloads/sc-companion/*` rewrite serves them through lvl222.com without an HTTP redirect and without putting large files through a Function. Legal pages are static. The catalog, source/download listings, and updater manifest are read from Blob. Redeploys no longer erase installer history.
+
+Vercel Cron checks for a new stable release daily at 09:00 UTC, using `/api/sync` authenticated by `CRON_SECRET`. This replaces the old persistent-server 15-minute loop. Publish immediately during a release rollout with `npm run sync:releases` followed by `npm run publish:downloads` from an authenticated local workspace; it does not require a website redeploy. Automated sync retains the previous catalog on failure. Do not run overlapping manual/cron publishes. Files from versions already mirrored are retained; old releases predating this migration are not automatically imported.
+
+The SDK reads ignored local credentials from `.env.local` for manual publishing. Production credentials are injected by the connected Blob store. Never put these credentials in public scripts or GitHub commits. Blob storage, CDN, and transfer usage can incur charges; monitor Vercel usage. No plan upgrade is required by this code.
+
+The website repo's Git integration should remain connected for automatic deployments from main. Cloudflare currently manages DNS: point the root A record to the value provided by Vercel and configure www as shown in Vercel Domains. Preserve MX/TXT email records. Verify domain HTTPS and direct downloads before using Store URLs or migrating desktop updater endpoints. Microsoft Store editions continue using Store updates.
+
+The GoDaddy instructions below describe the optional original self-hosted Node mode, not the active Vercel deployment. Its privacy copy would need updating before switching hosting providers again.
+
 ## GoDaddy Node.js Hosting
 
 Connect GitHub repository `biged214/lvl222`, branch `main`. Use the repository root as the application directory, Node.js 22 or later, `npm install` as the install command, `npm run build` as the build command, and `npm start` as the start command. The server uses GoDaddy's `PORT` environment variable and listens on `0.0.0.0`. Associate lvl222.com in the hosting dashboard and enable HTTPS there.

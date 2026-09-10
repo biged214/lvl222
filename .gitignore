@@ -3,3 +3,7 @@ node_modules/
 *.log
 test-results/
 data/
+dist/
+
+.vercel
+.env*

@@ -10,10 +10,15 @@
   "scripts": {
     "start": "node server.mjs",
     "build": "node --check server.mjs",
+    "build:vercel": "node scripts/build-vercel.mjs",
+    "publish:downloads": "node --env-file=.env.local scripts/publish-blob.mjs",
     "sync:releases": "node scripts/sync-releases.mjs",
     "test": "node --test tests/*.test.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.8.0"
   }
 }
