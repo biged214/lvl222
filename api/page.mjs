@@ -1,5 +1,5 @@
 import { readCatalog } from '../blob-store.mjs';
-import { downloadsPage, sourcePage } from '../pages.mjs';
+import { downloadsPage, sourcePage, checksumsPage } from '../pages.mjs';
 export default async function handler(req, res) {
   if (!['GET', 'HEAD'].includes(req.method)) { res.statusCode = 405; return res.end(); }
   try {
@@ -9,9 +9,9 @@ export default async function handler(req, res) {
     const latest = catalog.releases.find(r => r.tag === catalog.latest);
     res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=60');
     res.setHeader('X-Content-Type-Options', 'nosniff');
-    if (kind === 'downloads' || kind === 'source') {
+    if (kind === 'downloads' || kind === 'source' || kind === 'checksums') {
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
-      return res.end(req.method === 'HEAD' ? undefined : (kind === 'downloads' ? downloadsPage(catalog.releases) : sourcePage(catalog.releases)));
+      return res.end(req.method === 'HEAD' ? undefined : (kind === 'checksums' ? checksumsPage(catalog.releases) : kind === 'downloads' ? downloadsPage(catalog.releases) : sourcePage(catalog.releases)));
     }
     res.setHeader('X-Robots-Tag', 'noindex');
     res.setHeader('Content-Type', 'application/json');

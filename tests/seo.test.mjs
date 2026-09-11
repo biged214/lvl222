@@ -1,12 +1,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { legalPages, downloadsPage, sourcePage } from '../pages.mjs';
+import { legalPages, downloadsPage, sourcePage, checksumsPage } from '../pages.mjs';
 
 test('every indexable page has unique server-rendered metadata and a sitemap entry', async () => {
   const home = await readFile(new URL('../public/index.html', import.meta.url), 'utf8');
   const sitemap = await readFile(new URL('../public/sitemap.xml', import.meta.url), 'utf8');
-  const pages = { '/': home, ...legalPages, '/downloads': downloadsPage([]), '/source': sourcePage([]) };
+  const pages = { '/': home, ...legalPages, '/downloads': downloadsPage([]), '/source': sourcePage([]), '/checksums': checksumsPage([]) };
   const descriptions = new Set();
   for (const [path, html] of Object.entries(pages)) {
     assert.equal((html.match(/<title>/g) || []).length, 1);

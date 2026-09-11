@@ -56,6 +56,10 @@ This repository is independent of the desktop app. A website deployment does not
 
 ## Search discoverability
 
+Release summaries are maintained in `release-notes.mjs`. Add a specific list of user-facing changes for each new desktop version when publishing downloads; do not substitute generic installer instructions. The downloads page displays these summaries before its installer links. Full checksums and signature files remain available at `/checksums`, and source archives at `/source`.
+
+`node scripts/capture-tools.mjs` captures live public Trade Routes, Blueprints, and Market views using the adjacent app checkout and Chrome (port 1434 must be free). No personal session data is used. The gallery retains keyboard-accessible tabs and full-size image links.
+
 The homepage and all six information/download pages have server-rendered descriptions, canonical URLs, and Open Graph/Twitter previews. The homepage includes SoftwareApplication microdata identifying the free Windows/Linux app and its publisher. No ratings or reviews are invented. Canonicals prefer https://lvl222.com without redirecting installer URLs. Machine endpoints and installer files use noindex; the download page remains indexable.
 
 Keep public/sitemap.xml and seo.mjs current when adding pages. Run npm test to check metadata coverage. In Google Search Console, verify ownership of lvl222.com and submit https://lvl222.com/sitemap.xml, then request indexing of the homepage. This is an account-owner step; deployment alone does not submit the site or guarantee indexing, rankings, or rich results. No analytics or tracking were added.

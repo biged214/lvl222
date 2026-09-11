@@ -16,7 +16,7 @@ try {
   page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
   for (const width of [1440, 390, 320]) {
     await page.setViewportSize({ width, height: 1000 });
-    for (const path of ['/', '/downloads', '/privacy', '/terms', '/license', '/source', '/support']) {
+    for (const path of ['/', '/downloads', '/privacy', '/terms', '/license', '/source', '/support', '/checksums']) {
       const response = await page.goto(base + path);
       assert.equal(response.status(), 200);
       assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), `https://lvl222.com${path}`);
@@ -31,6 +31,13 @@ try {
         await page.locator('.hero-image').evaluate(img => img.decode());
         assert.equal(await page.locator('[itemtype="https://schema.org/SoftwareApplication"] [itemprop="name"]').first().getAttribute('content'), 'SC Companion');
         await page.screenshot({ path: `test-results/seo-${width}.png`, fullPage: true });
+        for (const key of ['home', 'ships', 'news', 'trade-routes', 'blueprints', 'market']) {
+          await page.locator(`[data-screen="${key}"]`).click();
+          await page.locator('#screenshot').evaluate(img => img.decode());
+          assert.ok((await page.locator('#screenshot').getAttribute('src')).endsWith(`/${key}.png`));
+          assert.equal(await page.locator(`#tab-${key}`).getAttribute('aria-selected'), 'true');
+          assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+        }
       }
     }
   }

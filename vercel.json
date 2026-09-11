@@ -7,6 +7,7 @@
   "functions": { "api/sync.mjs": { "maxDuration": 300 } },
   "crons": [{ "path": "/api/sync", "schedule": "0 9 * * *" }],
   "rewrites": [
+    { "source": "/checksums", "destination": "/api/page?kind=checksums" },
     { "source": "/downloads/sc-companion/:path*", "destination": "https://tscultkr7b7rgwsw.public.blob.vercel-storage.com/downloads/sc-companion/:path*" },
     { "source": "/downloads", "destination": "/api/page?kind=downloads" },
     { "source": "/source", "destination": "/api/page?kind=source" },

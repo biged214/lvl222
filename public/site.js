@@ -1,4 +1,7 @@
 const screens = {
+  'trade-routes': ['SC Companion trade route planner with ship selection and ranked routes', 'Compare cargo capacity, route estimates, and projected profit.'],
+  blueprints: ['SC Companion blueprint recipe with materials and acquisition details', 'Browse crafting recipes, quality requirements, and known acquisition sources.'],
+  market: ['SC Companion commodity market with prices and trading locations', 'Compare commodity buy and sell prices, supply, demand, and locations.'],
   home: ['SC Companion home page with grouped categories', 'A home for updates, reference data, trading tools, and live sessions.'],
   ships: ['SC Companion ship database', 'Browse ships and vehicles, compare specifications, and check availability.'],
   news: ['SC Companion news feed', 'Keep up with official RSI news without losing your place.']

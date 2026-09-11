@@ -4,9 +4,12 @@ import { createReadStream } from 'node:fs';
 import { pipeline } from 'node:stream/promises';
 import { fileURLToPath } from 'node:url';
 import { createReleaseStore } from './releases.mjs';
-import { legalPages, downloadsPage, sourcePage } from './pages.mjs';
+import { legalPages, downloadsPage, sourcePage, checksumsPage } from './pages.mjs';
 
 const files = new Map([
+  ['/images/trade-routes.png', ['images/trade-routes.png', 'image/png']],
+  ['/images/blueprints.png', ['images/blueprints.png', 'image/png']],
+  ['/images/market.png', ['images/market.png', 'image/png']],
   ['/', ['index.html', 'text/html; charset=utf-8']],
   ['/styles.css', ['styles.css', 'text/css; charset=utf-8']],
   ['/pages.css', ['pages.css', 'text/css; charset=utf-8']],
@@ -37,6 +40,7 @@ export function createWebsite(releases = store) {
       if (path === '/health') { send(200, 'ok'); return; }
       if (legalPages[path]) { send(200, legalPages[path], 'text/html; charset=utf-8'); return; }
       if (path === '/downloads') { send(200, downloadsPage(releases.list()), 'text/html; charset=utf-8'); return; }
+      if (path === '/checksums') { send(200, checksumsPage(releases.list()), 'text/html; charset=utf-8'); return; }
       if (path === '/source') { send(200, sourcePage(releases.list()), 'text/html; charset=utf-8'); return; }
       if (path === '/api/release') {
         const latest = releases.latest();

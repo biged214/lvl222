@@ -1,0 +1,34 @@
+import { chromium } from '@playwright/test';
+import { createServer } from '../../node_modules/vite/dist/node/index.js';
+import { fileURLToPath } from 'node:url';
+const root = fileURLToPath(new URL('../../', import.meta.url));
+const server = await createServer({ root, server: { host: '127.0.0.1', port: 1434, strictPort: true } });
+await server.listen();
+const browser = await chromium.launch({ channel: 'chrome' });
+try {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  await page.goto('http://127.0.0.1:1434');
+  await page.getByRole('button', { name: 'Market', exact: true }).click();
+  await page.locator('.market-table').waitFor({ timeout: 120000 });
+  await page.locator('.market-browser').evaluate(el => window.scrollTo(0, window.scrollY + el.getBoundingClientRect().top - 85));
+  await page.screenshot({ path: 'public/images/market.png' });
+  await page.getByRole('button', { name: 'Home', exact: true }).click();
+  await page.getByRole('button', { name: 'Trade Routes', exact: true }).click();
+  const ship = page.locator('.trade-filter-grid select').first();
+  await page.waitForFunction(() => document.querySelector('.trade-filter-grid select')?.options.length > 2, undefined, { timeout: 120000 });
+  const option = await ship.locator('option').evaluateAll(nodes => (nodes.find(n => /caterpillar|c2 hercules/i.test(n.textContent)) || nodes.find(n => n.value))?.value);
+  if (!option) throw new Error('Could not find a cargo ship for screenshot');
+  await ship.selectOption(option);
+  await page.locator('.trade-route-list').waitFor({ timeout: 120000 });
+  await page.locator('.trade-planner__heading').evaluate(el => window.scrollTo(0, window.scrollY + el.getBoundingClientRect().top - 85));
+  await page.screenshot({ path: 'public/images/trade-routes.png' });
+  await page.getByRole('button', { name: 'Home', exact: true }).click();
+  await page.getByRole('button', { name: 'Blueprints', exact: true }).click();
+  await page.locator('.bp-row').first().waitFor({ timeout: 120000 });
+  await page.getByPlaceholder('Blueprint or ingredient').fill('Omnisky III');
+  await page.getByText('Recipe & acquisition', { exact: true }).click();
+  await page.getByText('Faction, reputation & prerequisites', { exact: true }).waitFor({ timeout: 60000 });
+  await page.locator('.blueprints-view').evaluate(el => window.scrollTo(0, window.scrollY + el.getBoundingClientRect().top - 85));
+  await page.screenshot({ path: 'public/images/blueprints.png' });
+  console.log('Captured real Market, Trade Routes and Blueprints screenshots from public game data.');
+} finally { await browser.close(); await server.close(); }

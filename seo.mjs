@@ -1,4 +1,5 @@
 export const pageMetadata = {
+  'Download Verification': ['/checksums', 'Verify SC Companion installer downloads with published SHA-256 checksums and access update signature files.'],
   'Privacy Policy': ['/privacy', 'Learn how SC Companion and lvl222.com handle local app data, optional gameplay logs, downloads, and support requests.'],
   'Terms and Notices': ['/terms', 'Read the terms, third-party data notices, and Star Citizen trademark information for SC Companion by lvl222.'],
   'Software License': ['/license', 'SC Companion is licensed under GPL v3. Read the software license and find corresponding source code.'],
