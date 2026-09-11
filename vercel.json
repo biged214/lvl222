@@ -14,7 +14,12 @@
     { "source": "/updates/sc-companion/latest.json", "destination": "/api/page?kind=updater" }
   ],
   "headers": [
-    { "source": "/downloads/sc-companion/:path*", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
+    { "source": "/downloads/sc-companion/:path*", "headers": [
+      { "key": "X-Robots-Tag", "value": "noindex" },
+      { "key": "Cache-Control", "value": "no-store" },
+      { "key": "CDN-Cache-Control", "value": "no-store" },
+      { "key": "Vercel-CDN-Cache-Control", "value": "no-store" }
+    ] },
     { "source": "/updates/:path*", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
     { "source": "/health", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
     { "source": "/(.*)", "headers": [
