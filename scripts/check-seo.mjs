@@ -21,6 +21,11 @@ try {
       assert.equal(response.status(), 200);
       assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), `https://lvl222.com${path}`);
       assert.ok(await page.locator('meta[name="description"]').getAttribute('content'));
+      if (path === '/' || path === '/downloads') {
+        const store = page.getByRole('link', { name: 'Get it from Microsoft Store' });
+        assert.equal(await store.getAttribute('href'), 'https://apps.microsoft.com/store/detail/9P7MQG0CTW65?cid=DevShareMCLPCS');
+        assert.ok(await store.isVisible());
+      }
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `${path} overflows at ${width}`);
       if (path === '/') {
         await page.locator('.hero-image').evaluate(img => img.decode());
