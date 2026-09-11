@@ -1,6 +1,13 @@
 // User-facing summaries of changes in each published desktop release.
 // Add the next version here as part of publishing its website downloads.
 export const releaseNotes = {
+  'v1.0.0': [
+    'First 1.0 release: promotes the v0.32.1 feature set to v1.0.0 for Windows, Linux, and the Microsoft Store package.',
+    'Includes Announcements, News, Patch Notes, Server Status, unread indicators, and optional notifications.',
+    'Includes ships, components, organizations, starter guides, commodity markets, player listings, and trade route planning.',
+    'Includes Blueprints recipes, materials, crafting details, Owned/Wanted checklists, and known mission, faction, and reputation prerequisites. These features are new to Store users upgrading from v0.31.2.',
+    'Retains optional local session history, saved filters, caching, and tray support. Store availability follows Microsoft certification.'
+  ],
   'v0.32.1': [
     'Moved Blueprints to the end of the Reference group, after Organizations.',
     'Added expandable acquisition details with mission factions, mission givers, and reputation standing requirements.',
