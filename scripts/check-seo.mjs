@@ -19,6 +19,11 @@ try {
     for (const path of ['/', '/downloads', '/privacy', '/terms', '/license', '/source', '/support', '/checksums']) {
       const response = await page.goto(base + path);
       assert.equal(response.status(), 200);
+      const discord = page.getByRole('link', { name: 'Join our Discord community (opens in a new tab)' });
+      assert.equal(await discord.getAttribute('href'), 'https://discord.gg/XRqY79PM8');
+      assert.equal(await discord.getAttribute('target'), '_blank');
+      assert.ok(await discord.isVisible());
+      await discord.locator('img').evaluate(img => img.decode());
       assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), `https://lvl222.com${path}`);
       assert.ok(await page.locator('meta[name="description"]').getAttribute('content'));
       if (path === '/' || path === '/downloads') {

@@ -7,6 +7,7 @@ import { createReleaseStore } from './releases.mjs';
 import { legalPages, downloadsPage, sourcePage, checksumsPage } from './pages.mjs';
 
 const files = new Map([
+  ['/images/discord.svg', ['images/discord.svg', 'image/svg+xml']],
   ['/images/trade-routes.png', ['images/trade-routes.png', 'image/png']],
   ['/images/blueprints.png', ['images/blueprints.png', 'image/png']],
   ['/images/market.png', ['images/market.png', 'image/png']],
