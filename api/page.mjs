@@ -1,4 +1,4 @@
-import { readCatalog } from '../blob-store.mjs';
+import { readCatalog } from '../catalog.mjs';
 import { downloadsPage, sourcePage, checksumsPage } from '../pages.mjs';
 export default async function handler(req, res) {
   if (!['GET', 'HEAD'].includes(req.method)) { res.statusCode = 405; return res.end(); }

@@ -2,7 +2,22 @@
 
 Public company and SC Companion product site for https://lvl222.com.
 
-## Current hosting: Vercel
+## Current download delivery (November 17, 2026)
+
+Production uses Vercel for website pages and GitHub for installer/source downloads.
+The Blob store is blocked, so production no longer reads it. `api/page.mjs` reads
+bundled `release-catalog.mjs`; `api/download.mjs` redirects existing versioned
+lvl222.com download URLs only to validated files in the official GitHub repository.
+Updater signatures and checksums are unchanged. The daily Blob sync cron is disabled.
+
+For each release: finish and publish the GitHub builds, run `npm run sync:releases`
+to verify/download the artifacts, then `npm run publish:catalog`, commit the generated
+catalog and release notes, and push main. Verify deployment, latest version, redirects,
+and downloaded bytes. Keep historical catalog entries. No Vercel paid upgrade is
+needed for this setup. The Blob publishing scripts below describe the previous setup
+and must not be used for the current production release flow.
+
+## Previous hosting: Vercel Blob (inactive)
 
 The existing Vercel project is `lvl222/lvl222`, connected locally through ignored `.vercel/project.json`. `vercel.json` overrides the previous Node preset with a static site plus small API functions. `npm run build:vercel` creates `dist`. Never deploy `.env.local`, signing credentials, or the local `data` mirror.
 
