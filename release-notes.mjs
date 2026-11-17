@@ -1,6 +1,13 @@
 // User-facing summaries of changes in each published desktop release.
 // Add the next version here as part of publishing its website downloads.
 export const releaseNotes = {
+  'v1.0.4': [
+    "Fixed RSI news loading for current Comm-Link pages, including weekly posts, announcements, and videos.",
+    "Added images and click-to-play videos inside expanded News, Announcements, and Patch Notes articles.",
+    "Preserved the source order of text, images, and videos instead of grouping media at the bottom.",
+    "Added summary and original-link fallbacks when content or embedded playback is unavailable.",
+    "Refreshed article caches and retained Spanish and French interface translations."
+] ,
   'v1.0.0': [
     'First 1.0 release: promotes the v0.32.1 feature set to v1.0.0 for Windows, Linux, and the Microsoft Store package.',
     'Includes Announcements, News, Patch Notes, Server Status, unread indicators, and optional notifications.',
