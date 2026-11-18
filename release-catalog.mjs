@@ -1,7 +1,127 @@
 // Verified public release metadata. Regenerate with npm run publish:catalog.
 export default {
-  "latest": "v1.0.5",
+  "latest": "v1.0.6",
   "releases": [
+    {
+      "tag": "v1.0.6",
+      "version": "v1.0.6",
+      "notes": "## News and Merchandise Improvements\n\n- Removed hidden RSI store-widget code from news articles and added a readable offers fallback.\n- Filtered decorative masks and failed images, and removed original-image links.\n- Grouped merchandise artwork into compact panels with the original Shop Now link.\n- Refreshed cached news articles while preserving inline media and existing cache protections.\n\nMicrosoft Store updates are distributed separately after publisher submission and Microsoft certification.\n\n**Full Changelog**: https://github.com/biged214/sccompanion/compare/v1.0.5...v1.0.6",
+      "publishedAt": "2026-11-18T18:34:03Z",
+      "files": [
+        {
+          "name": "SC.Companion-1.0.6-1.x86_64.rpm",
+          "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion-1.0.6-1.x86_64.rpm",
+          "size": 21584904,
+          "sha256": "dd89944d3285f246817e4a5cbaaa01c07a20b75faffc183ff110f3bb321b33f6",
+          "downloadUrl": "https://github.com/biged214/sccompanion/releases/download/v1.0.6/SC.Companion-1.0.6-1.x86_64.rpm"
+        },
+        {
+          "name": "SC.Companion-1.0.6-1.x86_64.rpm.sig",
+          "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion-1.0.6-1.x86_64.rpm.sig",
+          "size": 424,
+          "sha256": "be35f245c7814a0d288340ec3984402ab3ab11d74dded373e09add8d2fcf5f18",
+          "downloadUrl": "https://github.com/biged214/sccompanion/releases/download/v1.0.6/SC.Companion-1.0.6-1.x86_64.rpm.sig"
+        },
+        {
+          "name": "SC.Companion_1.0.6_amd64.AppImage",
+          "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_amd64.AppImage",
+          "size": 99133944,
+          "sha256": "9f3dea24b65e7063a79c2d08c3b2c6e4fd842ce3796ebd7ed743bf6d793f9900",
+          "downloadUrl": "https://github.com/biged214/sccompanion/releases/download/v1.0.6/SC.Companion_1.0.6_amd64.AppImage"
+        },
+        {
+          "name": "SC.Companion_1.0.6_amd64.AppImage.sig",
+          "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_amd64.AppImage.sig",
+          "size": 424,
+          "sha256": "4d35c8b2f47cf5a2cdea420b4c0173a787cf3308c10842971ebb8ce98581e28e",
+          "downloadUrl": "https://github.com/biged214/sccompanion/releases/download/v1.0.6/SC.Companion_1.0.6_amd64.AppImage.sig"
+        },
+        {
+          "name": "SC.Companion_1.0.6_amd64.deb",
+          "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_amd64.deb",
+          "size": 21582646,
+          "sha256": "db2f604b54c78e24b3c23ff9100a85633119674e397d1e5f2f1024913a41fe15",
+          "downloadUrl": "https://github.com/biged214/sccompanion/releases/download/v1.0.6/SC.Companion_1.0.6_amd64.deb"
+        },
+        {
+          "name": "SC.Companion_1.0.6_amd64.deb.sig",
+          "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_amd64.deb.sig",
+          "size": 420,
+          "sha256": "5e074a7742dc09ae71e441c81f10fe6c925ffad9be520b0e8f99d6a646a8d1c6",
+          "downloadUrl": "https://github.com/biged214/sccompanion/releases/download/v1.0.6/SC.Companion_1.0.6_amd64.deb.sig"
+        },
+        {
+          "name": "SC.Companion_1.0.6_x64-setup.exe",
+          "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_x64-setup.exe",
+          "size": 17153713,
+          "sha256": "24c01862ee08b4157afc3a040bc080844cdf85a9985afc25be03d55448a49ead",
+          "downloadUrl": "https://github.com/biged214/sccompanion/releases/download/v1.0.6/SC.Companion_1.0.6_x64-setup.exe"
+        },
+        {
+          "name": "SC.Companion_1.0.6_x64-setup.exe.sig",
+          "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_x64-setup.exe.sig",
+          "size": 424,
+          "sha256": "57bc58cbc6bebbdc1b926b8207580a6f4b90f15411629767f5f2e68dd952d18b",
+          "downloadUrl": "https://github.com/biged214/sccompanion/releases/download/v1.0.6/SC.Companion_1.0.6_x64-setup.exe.sig"
+        },
+        {
+          "name": "SC.Companion_1.0.6_x64_en-US.msi",
+          "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_x64_en-US.msi",
+          "size": 19292160,
+          "sha256": "8aae57f0594446d830e3aaf3895c68b3fe9fd4cff79fa3c61d3ee057dc9f8840",
+          "downloadUrl": "https://github.com/biged214/sccompanion/releases/download/v1.0.6/SC.Companion_1.0.6_x64_en-US.msi"
+        },
+        {
+          "name": "SC.Companion_1.0.6_x64_en-US.msi.sig",
+          "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_x64_en-US.msi.sig",
+          "size": 424,
+          "sha256": "adc469861c10d1b8926cf17d2c6b4bc6ae3372f3cde54813f77fa90e1dd97282",
+          "downloadUrl": "https://github.com/biged214/sccompanion/releases/download/v1.0.6/SC.Companion_1.0.6_x64_en-US.msi.sig"
+        },
+        {
+          "name": "SC-Companion-v1.0.6-source.zip",
+          "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC-Companion-v1.0.6-source.zip",
+          "size": 12914535,
+          "sha256": "e10006b96ae74262e602362f25a5103ac82d58bf9d055b779d567258b1e323c3",
+          "downloadUrl": "https://codeload.github.com/biged214/sccompanion/zip/refs/tags/v1.0.6"
+        }
+      ],
+      "updater": {
+        "version": "1.0.6",
+        "notes": "## News and Merchandise Improvements\n\n- Removed hidden RSI store-widget code from news articles and added a readable offers fallback.\n- Filtered decorative masks and failed images, and removed original-image links.\n- Grouped merchandise artwork into compact panels with the original Shop Now link.\n- Refreshed cached news articles while preserving inline media and existing cache protections.\n\nMicrosoft Store updates are distributed separately after publisher submission and Microsoft certification.",
+        "pub_date": "2026-11-18T18:33:06.032Z",
+        "platforms": {
+          "linux-x86_64": {
+            "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdndNUnV5VWNveFdkYzdlUDd2cytZeTdNVnhuZ09yRVovMEl3ang1eFhTenBHTXd3cFJVenI5T0hqb3B4LzVzRXh6cUFnbUx0TmtMSEovS0FlYWpVUlk2SlhGZk96aEFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDI2NzA1CWZpbGU6U0MgQ29tcGFuaW9uXzEuMC42X2FtZDY0LkFwcEltYWdlCnZNZzEwc3NkeVgydGhwNUdlRWY4aTFjZWZiRW9ZN1lEZ3RTVDV0V1RMdVhDOGhKMTcvQ3Vwc1BIUnByQ1kwZVRnL29ENjF5d3NuNkVycFM0RzUvTEFnPT0K",
+            "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_amd64.AppImage"
+          },
+          "linux-x86_64-appimage": {
+            "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdndNUnV5VWNveFdkYzdlUDd2cytZeTdNVnhuZ09yRVovMEl3ang1eFhTenBHTXd3cFJVenI5T0hqb3B4LzVzRXh6cUFnbUx0TmtMSEovS0FlYWpVUlk2SlhGZk96aEFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDI2NzA1CWZpbGU6U0MgQ29tcGFuaW9uXzEuMC42X2FtZDY0LkFwcEltYWdlCnZNZzEwc3NkeVgydGhwNUdlRWY4aTFjZWZiRW9ZN1lEZ3RTVDV0V1RMdVhDOGhKMTcvQ3Vwc1BIUnByQ1kwZVRnL29ENjF5d3NuNkVycFM0RzUvTEFnPT0K",
+            "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_amd64.AppImage"
+          },
+          "linux-x86_64-deb": {
+            "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdndNUnV5VWNveGZsWUtVRmhsQUFqQ1JkT3pEcUNKNjJ1eG9Eak1BRGFDSFM5MWdTaWFZZjgrM0VWUUtmc3A5VUNoYlZvSVlESW5sYWtFd3N2TVNMNWRvWFdYMmEyUlFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDI2NzA1CWZpbGU6U0MgQ29tcGFuaW9uXzEuMC42X2FtZDY0LmRlYgo5SkMrSjhZeTlTVkdMWEd6UUpENlc4TFY3ZGdEMHk3amw3Q2ZoQ2R0L1NtaU5XK0UzcGN6cExOZHhZSkFKbnY2Nm9pcUw5ZC9HVlZOU05CbzV3dmhDQT09Cg==",
+            "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_amd64.deb"
+          },
+          "linux-x86_64-rpm": {
+            "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdndNUnV5VWNveGRBaTAzT2Q1UXBPTlFtU2pZdkJXaHR1djJIRWxnVFMrK0x3bUdKcFpobHJ0TzU5NXZUKzNzeDNFSFB5dklocjZqcTJSMXFJSll5MlBkZXJSeGMyVFFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDI2NzA1CWZpbGU6U0MgQ29tcGFuaW9uLTEuMC42LTEueDg2XzY0LnJwbQpVZ3lTRzNjNmhhMHRPMDdyRXo5SUV6OFhXek1GL1ZiTlUwUHpaSGkxMi94U2dGNCt3cXJoWk02ZDBMWm5yYTFMTGtLNys4L2dhMzh6R21EY1hlS3hBUT09Cg==",
+            "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion-1.0.6-1.x86_64.rpm"
+          },
+          "windows-x86_64": {
+            "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdndNUnV5VWNveFFyek9LNTRwUmw5dGZ0dEFmZFpJLzFrNk11L3l3RU5PcjdET2JUeG5wY1ZsdURwdkJHbVVFaFdzakYzYVcrR1F1N1F1TDUwS2tuME1LZnFnYi9nSFE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDI2Nzc5CWZpbGU6U0MgQ29tcGFuaW9uXzEuMC42X3g2NC1zZXR1cC5leGUKSFltMzdJK1VTdzBpS1ZJMGNHYU1WaHJkS3BjVEJJbW4rQnBMcGNab29tamlUTXhKT3ZhZmFZL2tySTcvRWE5eWpxR1lKQWxPakI2VlFkeXU0V2lBQ2c9PQo=",
+            "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_x64-setup.exe"
+          },
+          "windows-x86_64-nsis": {
+            "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdndNUnV5VWNveFFyek9LNTRwUmw5dGZ0dEFmZFpJLzFrNk11L3l3RU5PcjdET2JUeG5wY1ZsdURwdkJHbVVFaFdzakYzYVcrR1F1N1F1TDUwS2tuME1LZnFnYi9nSFE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDI2Nzc5CWZpbGU6U0MgQ29tcGFuaW9uXzEuMC42X3g2NC1zZXR1cC5leGUKSFltMzdJK1VTdzBpS1ZJMGNHYU1WaHJkS3BjVEJJbW4rQnBMcGNab29tamlUTXhKT3ZhZmFZL2tySTcvRWE5eWpxR1lKQWxPakI2VlFkeXU0V2lBQ2c9PQo=",
+            "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_x64-setup.exe"
+          },
+          "windows-x86_64-msi": {
+            "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdndNUnV5VWNveFpKNFhaRFNKRWM0K2FaZ1ppR1NNV3dvZ3hGbTJVT1hCTEVpVWpvQzFLenR4a2dNTzA5ZjllbWZ6Qklpd1lvVVF6NjNKd3JKdU51YWd6NTA3dDZmeEFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MDI2Nzc5CWZpbGU6U0MgQ29tcGFuaW9uXzEuMC42X3g2NF9lbi1VUy5tc2kKanc4ZDBnRHpxVHk5ZXNaRFJEbzlRNXBpaEVMYWVHRnlEUHMvbG5xVXN5ZXd0ZWhnZU0rUmdUN2dLY2tBajlyQjV5bHdxOXZMVWg4ZDc0THZNSWtiRHc9PQo=",
+            "url": "https://lvl222.com/downloads/sc-companion/v1.0.6/SC.Companion_1.0.6_x64_en-US.msi"
+          }
+        }
+      }
+    },
     {
       "tag": "v1.0.5",
       "version": "v1.0.5",

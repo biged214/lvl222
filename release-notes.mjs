@@ -1,6 +1,12 @@
 // User-facing summaries of changes in each published desktop release.
 // Add the next version here as part of publishing its website downloads.
 export const releaseNotes = {
+  'v1.0.6': [
+    "Removed hidden RSI store-widget code from news articles and added a readable offers fallback.",
+    "Filtered decorative masks and failed images, and removed original-image links.",
+    "Grouped merchandise artwork into compact panels with the original Shop Now link.",
+    "Refreshed cached news articles while preserving inline media and existing cache protections."
+],
   'v1.0.5': [
     "Fixed Patch Notes and Announcements failing to open when local storage is full.",
     "Article and feed caching is now optional: storage errors no longer hide successfully loaded content.",
